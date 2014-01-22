@@ -27,6 +27,7 @@
     "sinon": "~1.7.3",
     "grunt-contrib-watch": "~0.5.3",
     "SinonServerSugar": "zyll/SinonServerSugar",
-    "sinon-chai": "~2.4.0"
+    "sinon-chai": "~2.4.0",
+    "grunt-bower-task": "~0.3.4"
   }
 }

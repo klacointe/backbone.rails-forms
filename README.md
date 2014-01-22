@@ -12,12 +12,11 @@ TODO.
 ### Dependencies
 
 * node
-* bower
 * grunt
 
 ## Install
 
-Run `npm install && bower install && grunt`
+Run `npm install && npm test`
 
 ### Testing
 

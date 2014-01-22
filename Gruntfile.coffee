@@ -5,6 +5,7 @@ module.exports = (grunt)->
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-mocha'
+  grunt.loadNpmTasks 'grunt-bower-task'
 
   grunt.initConfig
     coffeelint:
@@ -44,5 +45,9 @@ module.exports = (grunt)->
     watch:
       files: ['src/**/*.coffee', 'test/**/*.coffee']
       tasks: ['coffeelint', 'coffee', 'mocha']
+    bower:
+      install:
+        targetDir: 'bower_components'
+        copy: no
 
-  grunt.registerTask 'default', ['jshint', 'coffeelint', 'coffee', 'mocha']
+  grunt.registerTask 'default', ['bower', 'jshint', 'coffeelint', 'coffee', 'mocha']
