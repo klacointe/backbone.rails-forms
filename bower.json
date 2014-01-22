@@ -1,0 +1,28 @@
+{
+  "name": "backbone.rails-forms",
+  "version": "0.0.1",
+  "authors": [
+    "klacointe <kevinlacointe@gmail.com>"
+  ],
+  "description": "Backbone forms for rails",
+  "main": [],
+  "keywords": [
+    "backbone",
+    "rails",
+    "form"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "backbone": "~1.1.0",
+    "lodash": "~2.4.1"
+  }
+}
