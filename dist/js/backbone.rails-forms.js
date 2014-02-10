@@ -61,8 +61,8 @@
       return this;
     };
 
-    AjaxForm.prototype.handleSuccess = function(resp) {
-      this.trigger('submit:success', resp);
+    AjaxForm.prototype.handleSuccess = function(resp, textStatus, xhr) {
+      this.trigger('submit:success', resp, textStatus, xhr);
       return this;
     };
 
@@ -176,8 +176,8 @@
       return this;
     };
 
-    BackboneForm.prototype.handleSuccess = function(resp) {
-      this.trigger('submit:success', resp);
+    BackboneForm.prototype.handleSuccess = function(resp, textStatus, xhr) {
+      this.trigger('submit:success', resp, textStatus, xhr);
       return this;
     };
 

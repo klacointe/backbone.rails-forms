@@ -13,8 +13,8 @@ class Backbone.RailsForms.BackboneForm extends Backbone.RailsForms.AjaxForm
       .always => @trigger 'submit:end'
     @
 
-  handleSuccess: (resp)=>
-    @trigger 'submit:success', resp
+  handleSuccess: (resp, textStatus, xhr)=>
+    @trigger 'submit:success', resp, textStatus, xhr
     @
 
   errorOnInput: (attr, error)->
