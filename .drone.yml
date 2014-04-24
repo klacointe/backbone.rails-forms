@@ -1,0 +1,10 @@
+iimage: node0.10
+env:
+script:
+  - npm install
+  - npm test
+services:
+notify:
+  email:
+    recipients:
+      - kevinlacointe@gmail.com
