@@ -1,6 +1,6 @@
 {
   "name": "backbone.rails-forms",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Backbone forms for Rails",
   "main": "dist/js/backbone.rails-forms",
   "directories": {
