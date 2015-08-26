@@ -1,4 +1,4 @@
-class Backbone.RailsForms.BackboneForm extends Backbone.RailsForms.AjaxForm
+class RailsForms.BackboneForm extends RailsForms.AjaxForm
 
   events:
     'submit': 'submit'

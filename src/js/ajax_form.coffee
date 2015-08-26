@@ -1,4 +1,4 @@
-class Backbone.RailsForms.AjaxForm extends Backbone.View
+class RailsForms.AjaxForm extends Backbone.View
 
   initialize: ->
     @on 'submit:start', @requestPending
@@ -13,7 +13,7 @@ class Backbone.RailsForms.AjaxForm extends Backbone.View
     e?.preventDefault()
     @clearErrors()
     headers = {}
-    headers["X-CSRF-Token"] = Backbone.RailsForms.csrfToken
+    headers["X-CSRF-Token"] = RailsForms.csrfToken
     $.ajax(
       method:   @$el.attr 'method'
       url:      @$el.attr 'action'
@@ -80,3 +80,4 @@ class Backbone.RailsForms.AjaxForm extends Backbone.View
     else
       @_spinner.insertAfter submit
     @
+

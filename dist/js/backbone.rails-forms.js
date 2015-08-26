@@ -1,24 +1,35 @@
 (function() {
-  var _ref, _ref1,
+  var $, Backbone, RailsForms, _, _ref, _ref1,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  Backbone.RailsForms = {};
+  RailsForms = {};
 
-  $(function() {
-    Backbone.RailsForms.csrfToken = $("meta[name='csrf-token']").attr('content');
-    return Backbone.sync = (function(original) {
-      return function(method, model, options) {
-        options.beforeSend = function(xhr) {
-          return xhr.setRequestHeader("X-CSRF-Token", Backbone.RailsForms.csrfToken);
-        };
-        return original(method, model, options);
+  _ = (typeof require === "function" ? require("underscore") : void 0) || window._;
+
+  $ = (typeof require === "function" ? require("jquery") : void 0) || window.$;
+
+  Backbone = (typeof require === "function" ? require("backbone") : void 0) || window.Backbone;
+
+  if (typeof module !== "undefined" && module !== null) {
+    module.exports = RailsForms;
+  } else {
+    Backbone.RailsForms = RailsForms;
+  }
+
+  RailsForms.csrfToken = $("meta[name='csrf-token']").attr('content');
+
+  Backbone.sync = (function(original) {
+    return function(method, model, options) {
+      options.beforeSend = function(xhr) {
+        return xhr.setRequestHeader("X-CSRF-Token", RailsForms.csrfToken);
       };
-    })(Backbone.sync);
-  });
+      return original(method, model, options);
+    };
+  })(Backbone.sync);
 
-  Backbone.RailsForms.AjaxForm = (function(_super) {
+  RailsForms.AjaxForm = (function(_super) {
     __extends(AjaxForm, _super);
 
     function AjaxForm() {
@@ -48,7 +59,7 @@
       }
       this.clearErrors();
       headers = {};
-      headers["X-CSRF-Token"] = Backbone.RailsForms.csrfToken;
+      headers["X-CSRF-Token"] = RailsForms.csrfToken;
       $.ajax({
         method: this.$el.attr('method'),
         url: this.$el.attr('action'),
@@ -149,7 +160,7 @@
 
   })(Backbone.View);
 
-  Backbone.RailsForms.BackboneForm = (function(_super) {
+  RailsForms.BackboneForm = (function(_super) {
     __extends(BackboneForm, _super);
 
     function BackboneForm() {
@@ -205,6 +216,6 @@
 
     return BackboneForm;
 
-  })(Backbone.RailsForms.AjaxForm);
+  })(RailsForms.AjaxForm);
 
 }).call(this);
