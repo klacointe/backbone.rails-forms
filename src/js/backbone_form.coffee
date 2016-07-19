@@ -19,9 +19,10 @@ class RailsForms.BackboneForm extends RailsForms.AjaxForm
 
   errorOnInput: (attr, error)->
     input = @$("select[name=#{attr}], input[name=#{attr}]").first()
-    input.parent('.control-group').addClass 'error'
+    parent = input.parent('.control-group')
+    parent.addClass 'error'
     error = $ '<div>', class: "error msg #{attr}", text: error
-    error.insertAfter input
+    parent.append error
     @
 
   syncModel: ->

@@ -3,12 +3,6 @@ Backbone Forms For Rails
 
 Handle forms on a Rails application.
 
-## Usage
-
-TODO.
-
-## Developers
-
 ### Dependencies
 
 * node
@@ -26,7 +20,4 @@ You can watch for file modfication with `grunt watch`.
 
 
 ## Credits
-
-Copyright (c) 2013 af83
-
 Released under the MIT license
